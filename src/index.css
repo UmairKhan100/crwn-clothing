@@ -21,4 +21,10 @@ code {
 body {
   font-family: sans-serif;
   line-height: 1;
+  margin: 32px 24px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }

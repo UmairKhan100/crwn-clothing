@@ -1,40 +1,18 @@
-import CategoriesMenu from "./components/categories-menu/categories-menu";
+import { Routes, Route } from "react-router-dom";
+import Home from "./routes/home/home";
+import Navigation from "./routes/navigation/navigation";
+
+const Shop = () => <h1>This is the shop page.</h1>;
 
 const App = () => {
-  const categories = [
-    {
-      id: 1,
-      title: "hats",
-      imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
-      color: "aqua",
-    },
-    {
-      id: 2,
-      title: "jackets",
-      imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
-      color: "tomato",
-    },
-    {
-      id: 3,
-      title: "sneakers",
-      imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
-      color: "springgreen",
-    },
-    {
-      id: 4,
-      title: "womens",
-      imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
-      color: "pink",
-    },
-    {
-      id: 5,
-      title: "mens",
-      imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
-      color: "orange",
-    },
-  ];
-
-  return <CategoriesMenu categories={categories} />;
+  return (
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+      </Route>
+    </Routes>
+  );
 };
 
 export default App;
