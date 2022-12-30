@@ -3,4 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  .nav-links-container {
+    display: flex;
+    gap: 24px;
+  }
 }
