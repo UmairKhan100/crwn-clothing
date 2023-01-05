@@ -26,4 +26,14 @@
       background-color: #00f;
     }
   }
+
+  &.inverted {
+    background-color: #fff;
+    color: #000;
+
+    &:hover {
+      color: #fff;
+      background-color: #000;
+    }
+  }
 }

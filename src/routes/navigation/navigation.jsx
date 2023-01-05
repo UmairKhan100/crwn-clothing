@@ -3,8 +3,8 @@ import { Outlet, Link } from "react-router-dom";
 
 import "./navigation.scss";
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
-import "../../contexts/user-context/user-context";
-import { UserContext } from "../../contexts/user-context/user-context";
+import "../../contexts/user-context";
+import { UserContext } from "../../contexts/user-context";
 import { signOutUser } from "../../utils/firebase/firebase";
 
 const Navigation = () => {
