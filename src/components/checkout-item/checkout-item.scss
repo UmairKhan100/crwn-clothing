@@ -1,0 +1,26 @@
+.checkout-item {
+  .quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  td {
+    font-size: 18px;
+    padding: 16px 0;
+  }
+
+  img {
+    width: 160px;
+    height: 160px;
+  }
+
+  svg {
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .center {
+    text-align: center;
+  }
+}
