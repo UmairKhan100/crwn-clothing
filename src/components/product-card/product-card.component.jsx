@@ -1,6 +1,10 @@
 import { useContext } from "react";
 
-import { ProductCardContainer, ProductFooter } from "./product-card.styles";
+import {
+  BackgroundImage,
+  ProductCardContainer,
+  ProductFooter,
+} from "./product-card.styles";
 import Button, { BUTTON_TYPE_STYLES } from "../button/button.component";
 import { CartContext } from "../../contexts/cart.context";
 
@@ -12,7 +16,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <ProductCardContainer>
-      <img src={imageUrl} alt={name} />
+      <BackgroundImage imageurl={imageUrl} />
       <Button
         buttonType={BUTTON_TYPE_STYLES.inverted}
         onClick={addProductToCart}

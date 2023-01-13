@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
+export const BackgroundImage = styled.div`
+  height: 100%;
+  width: 100%;
+  background-image: ${({ imageurl }) => `url(${imageurl})`};
+  background-position: center;
+  background-size: cover;
+`;
+
 export const ProductCardContainer = styled.div`
   height: 350px;
   position: relative;
-
-  img {
-    width: 100%;
-    height: 95%;
-  }
+  cursor: pointer;
 
   button {
     position: absolute;
@@ -19,9 +23,8 @@ export const ProductCardContainer = styled.div`
   }
 
   &:hover {
-    img {
-      cursor: pointer;
-      opacity: 0.8;
+    ${BackgroundImage} {
+      opacity: 0.85;
     }
 
     button {
