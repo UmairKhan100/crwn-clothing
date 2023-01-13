@@ -20,7 +20,7 @@ const Category = () => {
       <ProductsContainer>
         {Object.keys(categoriesMap).length !== 0 &&
           categoriesMap[category].map((product) => (
-            <ProductCard product={product} />
+            <ProductCard key={product.name} product={product} />
           ))}
       </ProductsContainer>
     </CategoryContainer>
