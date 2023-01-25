@@ -11,10 +11,9 @@ import Category from "./routes/category/category.component";
 import {
   createUserDocumentFromAuth,
   onAuthStateChangedListener,
-  getCategoriesAndDocuments,
 } from "./utils/firebase.util";
 import { setCurrentUser } from "./store/user/user.action";
-import { setCategories } from "./store/categories/categories.action";
+import { fetchCategoriesAsync } from "./store/categories/categories.action";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -30,11 +29,7 @@ const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    const getCategories = async () => {
-      const categories = await getCategoriesAndDocuments();
-      dispatch(setCategories(categories));
-    };
-    getCategories();
+    dispatch(fetchCategoriesAsync());
   }, [dispatch]);
 
   return (
