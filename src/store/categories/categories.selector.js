@@ -16,3 +16,5 @@ export const selectCategoriesMap = createSelector(
       return acc;
     }, {})
 );
+
+export const selectCategoriesIsLoading = (state) => state.categories.isLoading;
