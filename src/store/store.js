@@ -6,9 +6,10 @@ import {
 import logger from "redux-logger";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import thunk from "redux-thunk";
+import createSagaMiddleware from "redux-saga";
 
 import { rootReducer } from "./root-reducer";
+import { rootSaga } from "./root-saga";
 
 const persistConfig = {
   key: "root",
@@ -17,9 +18,10 @@ const persistConfig = {
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+const sagaMiddleware = createSagaMiddleware();
 const middlewares = [
   process.env.NODE_ENV !== "production" && logger,
-  thunk,
+  sagaMiddleware,
 ].filter(Boolean);
 
 const composeEnhancer =
@@ -30,4 +32,5 @@ const composeEnhancer =
 const enhancers = composeEnhancer(applyMiddleware(...middlewares));
 
 export const store = createStore(persistedReducer, undefined, enhancers);
+sagaMiddleware.run(rootSaga);
 export const persistor = persistStore(store);

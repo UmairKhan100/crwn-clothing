@@ -13,7 +13,7 @@ import {
   onAuthStateChangedListener,
 } from "./utils/firebase.util";
 import { setCurrentUser } from "./store/user/user.action";
-import { fetchCategoriesAsync } from "./store/categories/categories.action";
+import { fetchCategoriesStart } from "./store/categories/categories.action";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(fetchCategoriesAsync());
+    dispatch(fetchCategoriesStart());
   }, [dispatch]);
 
   return (
