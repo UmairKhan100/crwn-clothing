@@ -33,4 +33,5 @@ export const TotalPrice = styled.span`
   display: flex;
   justify-content: flex-end;
   padding: 32px 0;
+  margin-bottom: 32px;
 `;

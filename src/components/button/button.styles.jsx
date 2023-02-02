@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { SpinnerContainer } from "../spinner/spinner.styles";
+
 export const BaseButton = styled.button`
   margin: 10px 0;
   font-size: 16px;
@@ -38,4 +40,9 @@ export const InvertedButton = styled(BaseButton)`
     color: #fff;
     background-color: #000;
   }
+`;
+
+export const SpinnerButton = styled(SpinnerContainer)`
+  width: 20px;
+  height: 20px;
 `;
